@@ -1,52 +1,39 @@
-# Semantic Kernel — Python Tutorial Project
+"""
+run_all.py — Run Levels 1–4 back to back (non-interactive demo).
 
-A working Python project covering all 5 levels of the Semantic Kernel tutorial.
+Level 5 is a live chatbot and must be run separately:
+    python level5_memory.py
 
-## Setup
+Run this file:
+    python run_all.py
+"""
 
-```bash
-# 1. Install dependencies
-pip install -r requirements.txt
+import asyncio
 
-# 2. Copy the example env file and add your API key
-cp .env.example .env
-# Edit .env and replace sk-your-key-here with your real key
-```
+import level1_hello_ai
+import level2_prompt_templates
+import level3_plugins
+import level4_pipelines
 
-Get your API key at → https://platform.openai.com/api-keys
 
-## Run
+async def main():
+    print("\n" + "🔷" * 25)
+    print("  SEMANTIC KERNEL — Full Tutorial Run")
+    print("🔷" * 25 + "\n")
 
-| File | Level | Description |
-|------|-------|-------------|
-| `level1_hello_ai.py` | Beginner | First AI response |
-| `level2_prompt_templates.py` | Beginner | Dynamic prompt templates |
-| `level3_plugins.py` | Beginner+ | Reusable plugin functions |
-| `level4_pipelines.py` | Intermediate | Multi-step AI pipelines |
-| `level5_memory.py` | Intermediate | Stateful chatbot with memory |
-| `run_all.py` | — | Run levels 1–4 in sequence |
+    await level1_hello_ai.main()
+    print()
+    await level2_prompt_templates.main()
+    print()
+    await level3_plugins.main()
+    print()
+    await level4_pipelines.main()
 
-```bash
-python level1_hello_ai.py
-python level2_prompt_templates.py
-python level3_plugins.py
-python level4_pipelines.py
-python level5_memory.py   # interactive chatbot
-python run_all.py         # run levels 1-4 together
-```
+    print("=" * 50)
+    print("  All levels complete!")
+    print("  Run level5_memory.py for the interactive chatbot.")
+    print("=" * 50)
 
-## Project Structure
 
-```
-semantic_kernel_tutorial/
-├── .env                        ← your API key (never commit)
-├── .env.example                ← template
-├── .gitignore
-├── requirements.txt
-├── run_all.py
-├── level1_hello_ai.py
-├── level2_prompt_templates.py
-├── level3_plugins.py
-├── level4_pipelines.py
-└── level5_memory.py
-```
+if __name__ == "__main__":
+    asyncio.run(main())
