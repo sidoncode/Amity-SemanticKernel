@@ -7,14 +7,10 @@
 
 Option A — OpenAI (recommended for beginners)
 
-1
-Go to platform.openai.com/signup and create a free account.
-2
-Click your profile icon → API Keys → Create new secret key.
-3
-Copy the key (starts with sk-...). You only see it once — save it.
-4
-Add a small credit balance under Billing (even $5 covers hundreds of test calls).
+1. Go to platform.openai.com/signup and create a free account.
+2. Click your profile icon → API Keys → Create new secret key.
+3. Copy the key (starts with sk-...). You only see it once — save it.
+4. Add a small credit balance under Billing (even $5 covers hundreds of test calls).
 
 
 ```
